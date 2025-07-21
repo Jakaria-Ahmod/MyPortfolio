@@ -1,15 +1,18 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router';
+import RootLayout from './CommonLayout/RootLayout';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <div>Hello World</div>,
-    },
-    {
-      path: '/about',
-      element: <div>Hello about</div>,
+      element: <RootLayout></RootLayout>,
+      children: [
+        {
+          path: '/',
+          element: <h3>i am jakaria</h3>,
+        },
+      ],
     },
   ]);
 
