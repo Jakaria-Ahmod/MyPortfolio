@@ -42,7 +42,7 @@ const LayoutLeft = () => {
   ];
   const statsData = [
     {
-      value: '5+',
+      value: '2+',
       label: 'Years of Experience',
     },
     {
@@ -62,7 +62,7 @@ const LayoutLeft = () => {
         <h3 className="font-Lato text-[24px] font-semibold">
           Md Jakaria Ahmod
         </h3>
-        <h1 className="font-Lato text-[70px] font-black text-praimary">
+        <h1 className="font-Lato text-[50px] font-black text-praimary">
           <Typewriter
             words={typingWords}
             loop={true}
