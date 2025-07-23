@@ -4,6 +4,7 @@ import LayoutRight from './components/LayoutRight';
 import Services from '../Services';
 import About from '../About';
 import Skills from '../Skills';
+import Projects from '../Projects';
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
         <Services></Services>
         <About></About>
         <Skills></Skills>
+        <Projects></Projects>
       </div>
     </div>
   );
