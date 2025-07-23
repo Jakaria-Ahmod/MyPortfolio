@@ -3,6 +3,8 @@ import { CiLinkedin } from 'react-icons/ci';
 import { FaFacebook, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
 import CommonButton from '../../../globalComponents/CommonButton';
+import { Link } from 'react-router';
+import CountUp from 'react-countup';
 
 const LayoutLeft = () => {
   const typingWords = [
@@ -87,7 +89,12 @@ const LayoutLeft = () => {
           ))}
         </div>
         <div className="mt-[61px] flex gap-x-[24px] items-center">
-          <CommonButton children="Hire Me"></CommonButton>
+          <Link
+            to="/contact"
+            className="py-[12px] px-[40px] capitalize bg-praimary text-white font-Lato text-base font-bold cursor-pointer rounded-md"
+          >
+            Hire Me
+          </Link>
           <div>
             <a
               href="https://drive.google.com/file/d/1y0vDrmTKlOdyFOPFmM8YZU_wihc5AQrI/view?usp=drive_link"
@@ -99,23 +106,28 @@ const LayoutLeft = () => {
           </div>
         </div>
         <div className="p-[24px] bg-amber-100 max-w-[710px] flex mt-[104px] gap-x-[30px]">
-          {statsData.map((item, index) => (
-            <React.Fragment key={index}>
-              <div>
-                <h3 className="text-praimary font-Lato font-extrabold text-[24px]">
-                  {item.value}
-                </h3>
-                <h3 className="font-Lato text-[20px] font-bold">
-                  {item.label}
-                </h3>
-              </div>
-              {/* Divider between items except after the last item */}
-              {index !== statsData.length - 1 && (
-                // <div className="w-[1px] h-full bg-gray-300"></div>
-                <div className="w-[1px]  h-[full] bg-gray-300"></div>
-              )}
-            </React.Fragment>
-          ))}
+          {statsData.map((item, index) => {
+            const numericValue = parseInt(item.value); // string থেকে number
+            return (
+              <React.Fragment key={index}>
+                <div>
+                  <h3 className="text-praimary font-Lato font-extrabold text-[24px]">
+                    <CountUp
+                      end={numericValue}
+                      duration={2}
+                      suffix={item.value.includes('+') ? '+' : ''}
+                    />
+                  </h3>
+                  <h3 className="font-Lato text-[20px] font-bold">
+                    {item.label}
+                  </h3>
+                </div>
+                {index !== statsData.length - 1 && (
+                  <div className="w-[1px] h-full bg-gray-300"></div>
+                )}
+              </React.Fragment>
+            );
+          })}
         </div>
       </div>
     </div>
