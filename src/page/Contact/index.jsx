@@ -1,126 +1,118 @@
-import React from 'react';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+// ContactForm.jsx
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
-const Contact = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    },
-    validationSchema: Yup.object({
-      name: Yup.string().required('Name is required'),
-      email: Yup.string()
-        .email('Invalid email address')
-        .required('Email is required'),
-      subject: Yup.string().required('Subject is required'),
-      message: Yup.string()
-        .min(10, 'Message should be at least 10 characters')
-        .required('Message is required'),
-    }),
-    onSubmit: (values, { resetForm }) => {
-      console.log('Submitted:', values);
-      alert('Message Sent!');
-      resetForm();
-    },
-  });
+const ContactForm = () => {
+  const form = useRef();
 
+  const sendEmail = e => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_6dtzpaa',
+        'template_fz0qii9',
+        form.current,
+        '18VLLnGxilg3YJ3Fw'
+      )
+      .then(
+        result => {
+          toast.success('✅ Message sent successfully!');
+          form.current.reset();
+          console.log(result);
+        },
+        error => {
+          toast.error('❌ Something went wrong. Please try again!');
+          console.log(error);
+        }
+      );
+  };
   return (
-    <section className="max-w-4xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold text-center mb-10 text-blue-600">
-        Contact Me
+    <div className="max-w-3xl mx-auto p-6 md:p-12 bg-white rounded-2xl shadow-md my-[100px]">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-blue-600">
+        contacts
       </h2>
 
-      <form
-        onSubmit={formik.handleSubmit}
-        className="space-y-6 bg-white p-8 shadow-md rounded-lg"
-      >
-        {/* Name */}
-        <div>
-          <label className="block mb-1 font-semibold text-gray-700">Name</label>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your full name"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.name}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {formik.touched.name && formik.errors.name && (
-            <p className="text-red-500 text-sm mt-1">{formik.errors.name}</p>
-          )}
+      <form ref={form} onSubmit={sendEmail} className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Full Name
+            </label>
+            <input
+              type="text"
+              name="fullName"
+              required
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter Your Name "
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="you@example.com"
+            />
+          </div>
         </div>
 
-        {/* Email */}
-        <div>
-          <label className="block mb-1 font-semibold text-gray-700">
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email address"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {formik.touched.email && formik.errors.email && (
-            <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
-          )}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Phone
+            </label>
+            <input
+              type="text"
+              name="phone"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="+880 1234-567890"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Website (optional)
+            </label>
+            <input
+              type="text"
+              name="website"
+              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="https://your-portfolio.com"
+            />
+          </div>
         </div>
 
-        {/* Subject */}
         <div>
-          <label className="block mb-1 font-semibold text-gray-700">
-            Subject
-          </label>
-          <input
-            type="text"
-            name="subject"
-            placeholder="Subject of your message"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.subject}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          {formik.touched.subject && formik.errors.subject && (
-            <p className="text-red-500 text-sm mt-1">{formik.errors.subject}</p>
-          )}
-        </div>
-
-        {/* Message */}
-        <div>
-          <label className="block mb-1 font-semibold text-gray-700">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
             Message
           </label>
           <textarea
-            name="message"
-            rows="5"
-            placeholder="Write your message here..."
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.message}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            name="comments"
+            rows="6"
+            required
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Type your message here..."
           />
-          {formik.touched.message && formik.errors.message && (
-            <p className="text-red-500 text-sm mt-1">{formik.errors.message}</p>
-          )}
         </div>
 
-        {/* Submit */}
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
-        >
-          Send Message
-        </button>
+        <div className="text-center">
+          <button
+            type="submit"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md cursor-pointer"
+          >
+            ✉️ Send Message
+          </button>
+        </div>
       </form>
-    </section>
+    </div>
   );
 };
 
-export default Contact;
+export default ContactForm;

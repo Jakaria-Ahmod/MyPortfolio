@@ -8,6 +8,7 @@ import Girl from '../../assets/img/girl.png';
 import podcast from '../../assets/img/pod.png';
 import builder from '../../assets/img/buil.png';
 import Port from '../../assets/img/port.png';
+import web from '../../assets/img/web.png';
 import ProjectCard from '../../globalComponents/PojectCard';
 
 const projectsData = [
@@ -39,7 +40,7 @@ const projectsData = [
     name: 'web-aplicaition',
     link: 'https://web-aplicaiton.vercel.app/',
     gitHubLink: 'https://github.com/Jakaria-Ahmod/MERNIAN-WEB',
-    PojectImg: movie,
+    PojectImg: web,
   },
   {
     name: 'e-commerce',
@@ -56,7 +57,7 @@ const projectsData = [
   {
     name: 'podcast',
     link: 'https://full-poject-7.vercel.app/',
-    gitHubLink: 'https://github.com/Jakaria-Ahmod/podcast',
+    gitHubLink: 'https://github.com/Jakaria-Ahmod/full_poject_7',
     PojectImg: podcast,
   },
   {
@@ -75,7 +76,7 @@ const projectsData = [
 const Projects = () => {
   const [poject, setPoject] = useState(6);
   return (
-    <section className="max-w-6xl mx-auto p-6">
+    <section className="max-w-6xl mx-auto p-6 my-[100px]">
       <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
         My Projects
       </h2>

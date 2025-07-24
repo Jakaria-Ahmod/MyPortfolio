@@ -5,7 +5,7 @@ import CommonHeding from '../../globalComponents/CommonHeading';
 
 const About = () => {
   return (
-    <div className="container">
+    <div className="container my-[100px]">
       <div>
         <CommonHeding
           Services="About Me"
