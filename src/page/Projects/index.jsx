@@ -101,7 +101,7 @@ const Projects = () => {
         <div className="flex justify-center mt-10">
           <button
             onClick={() => setPoject(prev => prev + 3)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition duration-300"
+            className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition duration-300"
           >
             Load More
           </button>
