@@ -7,10 +7,11 @@ import Skills from '../Skills';
 import Projects from '../Projects';
 
 const HomePage = () => {
+  window.scrollTo(0, 0);
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 md:py-16">
       {/* Top Layout Section (Left + Right) */}
-      <div className="grid mt-[106px] grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start">
+      <div className="grid mt-[106px]  grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-center">
         <LayoutLeft />
         <LayoutRight />
       </div>

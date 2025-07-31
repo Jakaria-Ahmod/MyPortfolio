@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'react-toastify';
 
 const ContactForm = () => {
+  window.scrollTo(0, 0);
   const form = useRef();
 
   const sendEmail = e => {

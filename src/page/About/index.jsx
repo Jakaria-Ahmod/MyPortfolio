@@ -4,8 +4,9 @@ import AboutRight from './components/AboutRight';
 import CommonHeding from '../../globalComponents/CommonHeading';
 
 const About = () => {
+  window.scrollTo(0, 0);
   return (
-    <div className="container my-[100px] px-4 mx-auto">
+    <div className="container my-[150px] px-4 mx-auto ">
       <div>
         <CommonHeding
           Services="About Me"

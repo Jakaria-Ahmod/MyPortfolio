@@ -10,7 +10,7 @@ const Services = () => {
   const handleClick = () => {
     setCard(p => p + 6);
   };
-
+  window.scrollTo(0, 0);
   return (
     <div className="container mx-auto px-4">
       <div className="my-20 md:my-[150px]">
