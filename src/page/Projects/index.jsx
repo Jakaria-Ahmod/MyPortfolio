@@ -73,30 +73,37 @@ const projectsData = [
     PojectImg: Port,
   },
 ];
+
 const Projects = () => {
   const [poject, setPoject] = useState(6);
+
   return (
-    <section className="max-w-6xl mx-auto p-6 my-[100px]">
-      <h2 className="text-3xl font-bold mb-8 text-center text-blue-600">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 className="text-3xl font-bold mb-10 text-center text-blue-600">
         My Projects
       </h2>
-      <div className="grid grid-cols-3 gap-[40px]">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsData.slice(0, poject).map(item => (
-          <ProjectCard
-            img={item?.PojectImg}
-            proectLInk={item?.link}
-            gitHubLink={item?.gitHubLink}
-            name={item?.name}
-          ></ProjectCard>
+          <div className="flex justify-center">
+            <ProjectCard
+              key={item.name}
+              img={item.PojectImg}
+              proectLInk={item.link}
+              gitHubLink={item.gitHubLink}
+              name={item.name}
+            />
+          </div>
         ))}
       </div>
+
       {poject < projectsData.length && (
-        <div className="flex items-center justify-center mt-[40px]">
+        <div className="flex justify-center mt-10">
           <button
-            onClick={() => setPoject(p => p + 6)}
-            className="bg-blue-600 px-[30px] py-[10px] rounded-md text-white font-bold cursor-pointer"
+            onClick={() => setPoject(prev => prev + 3)}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded transition duration-300"
           >
-            Load..
+            Load More
           </button>
         </div>
       )}

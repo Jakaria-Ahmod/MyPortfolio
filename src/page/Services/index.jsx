@@ -6,38 +6,42 @@ import CommonButton from '../../globalComponents/CommonButton';
 
 const Services = () => {
   const [card, setCard] = useState(6);
+
   const handleClick = () => {
     setCard(p => p + 6);
   };
 
   return (
-    <div className="container">
-      <div className="my-[150px]">
+    <div className="container mx-auto px-4">
+      <div className="my-20 md:my-[150px]">
+        {/* Section Heading */}
         <div>
           <CommonHeding
             Services="Services"
             p="I build fast, dynamic, and scalable frontend applications using React.js with reusable components and clean architecture."
-          ></CommonHeding>
+          />
         </div>
-        <div>
-          <div className="grid grid-cols-3 gap-[40px] cursor-pointer mt-[80px]">
-            {services.slice(0, card).map(item => (
-              <div key={item?.id}>
-                <SerVicesCard
-                  id={item?.id}
-                  title={item?.title}
-                  icon={item?.icon}
-                  description={item?.description}
-                ></SerVicesCard>
-              </div>
-            ))}
-          </div>
-          {card < services.length && (
-            <div className="mt-[20px] flex items-center justify-center">
-              <CommonButton handleClick={handleClick}>Load More</CommonButton>
+
+        {/* Services Cards */}
+        <div className="mt-16 grid grid-cols-1 justify-center sm:grid-cols-1 lg:grid-cols-2 gap-8">
+          {services.slice(0, card).map(item => (
+            <div key={item?.id} className="flex justify-center">
+              <SerVicesCard
+                id={item?.id}
+                title={item?.title}
+                icon={item?.icon}
+                description={item?.description}
+              />
             </div>
-          )}
+          ))}
         </div>
+
+        {/* Load More Button */}
+        {card < services.length && (
+          <div className="mt-10 flex justify-center">
+            <CommonButton handleClick={handleClick}>Load More</CommonButton>
+          </div>
+        )}
       </div>
     </div>
   );

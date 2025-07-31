@@ -2,7 +2,6 @@ import React from 'react';
 import { CiLinkedin } from 'react-icons/ci';
 import { FaFacebook, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
-import CommonButton from '../../../globalComponents/CommonButton';
 import { Link } from 'react-router';
 import CountUp from 'react-countup';
 
@@ -20,6 +19,7 @@ const LayoutLeft = () => {
     'Problem Solver',
     'Open Source Contributor',
   ];
+
   const socialLinks = [
     {
       name: 'LinkedIn',
@@ -42,6 +42,7 @@ const LayoutLeft = () => {
       url: 'https://github.com/Jakaria-Ahmod',
     },
   ];
+
   const statsData = [
     {
       value: '2+',
@@ -58,13 +59,15 @@ const LayoutLeft = () => {
   ];
 
   return (
-    <div>
-      <div>
-        <p className="font-Lato text-[24px] font-semibold">Hi I am</p>
-        <h3 className="font-Lato text-[24px] font-semibold">
+    <div className="w-full">
+      <div className="text-center md:text-left">
+        <p className="font-Lato text-[20px] md:text-[24px] font-semibold">
+          Hi I am
+        </p>
+        <h3 className="font-Lato text-[20px] md:text-[24px] font-semibold">
           Md Jakaria Ahmod
         </h3>
-        <h1 className="font-Lato text-[50px] font-black text-praimary">
+        <h1 className="font-Lato text-[28px] md:text-[50px] font-black text-praimary mt-2 md:mt-0">
           <Typewriter
             words={typingWords}
             loop={true}
@@ -75,57 +78,55 @@ const LayoutLeft = () => {
             delaySpeed={1000}
           />
         </h1>
-        <div className="flex gap-x-[20px] mt-[20px]">
+
+        {/* Social Icons */}
+        <div className="flex justify-center md:justify-start gap-x-4 mt-5">
           {socialLinks.map((item, index) => (
-            <div
+            <a
               key={index}
-              className="w-[40px] h-[40px] border hover:bg-praimary hover:text-white transition-all border-gray-400 rounded-full flex items-center justify-center"
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
               title={item.name}
+              className="w-[40px] h-[40px] border hover:bg-praimary hover:text-white transition-all border-gray-400 rounded-full flex items-center justify-center"
             >
-              <a href={item.url} target="_blank" rel="noopener noreferrer">
-                {item.icon}
-              </a>
-            </div>
+              {item.icon}
+            </a>
           ))}
         </div>
-        <div className="mt-[61px] flex gap-x-[24px] items-center">
+
+        {/* Buttons */}
+        <div className="mt-10 flex flex-col md:flex-row gap-4 items-center justify-center md:justify-start">
           <Link
             to="/contact"
-            className="py-[12px] px-[40px] capitalize bg-praimary text-white font-Lato text-base font-bold cursor-pointer rounded-md"
+            className="py-3 px-8 capitalize bg-praimary text-white font-Lato text-base font-bold rounded-md"
           >
             Hire Me
           </Link>
-          <div>
-            <a
-              href="https://drive.google.com/file/d/1y0vDrmTKlOdyFOPFmM8YZU_wihc5AQrI/view?usp=drive_link"
-              target="_blank"
-              className="py-[12px] px-[40px] capitalize bg-praimary text-white font-Lato text-base font-bold cursor-pointer rounded-md"
-            >
-              Downlead CV
-            </a>
-          </div>
+          <a
+            href="https://drive.google.com/file/d/1y0vDrmTKlOdyFOPFmM8YZU_wihc5AQrI/view?usp=drive_link"
+            target="_blank"
+            className="py-3 px-8 capitalize bg-praimary text-white font-Lato text-base font-bold rounded-md"
+          >
+            Download CV
+          </a>
         </div>
-        <div className="p-[24px] bg-amber-100 max-w-[710px] flex mt-[104px] gap-x-[30px]">
+
+        {/* Stats */}
+        <div className="mt-12 bg-amber-100 p-5 rounded-md flex flex-col sm:flex-row gap-6 justify-between items-center max-w-full md:max-w-[710px] mx-auto md:mx-0">
           {statsData.map((item, index) => {
-            const numericValue = parseInt(item.value); // string থেকে number
+            const numericValue = parseInt(item.value);
             return (
-              <React.Fragment key={index}>
-                <div>
-                  <h3 className="text-praimary font-Lato font-extrabold text-[24px]">
-                    <CountUp
-                      end={numericValue}
-                      duration={2}
-                      suffix={item.value.includes('+') ? '+' : ''}
-                    />
-                  </h3>
-                  <h3 className="font-Lato text-[20px] font-bold">
-                    {item.label}
-                  </h3>
-                </div>
-                {index !== statsData.length - 1 && (
-                  <div className="w-[1px] h-full bg-gray-300"></div>
-                )}
-              </React.Fragment>
+              <div key={index} className="text-center">
+                <h3 className="text-praimary font-extrabold text-2xl">
+                  <CountUp
+                    end={numericValue}
+                    duration={2}
+                    suffix={item.value.includes('+') ? '+' : ''}
+                  />
+                </h3>
+                <h4 className="text-base font-bold mt-1">{item.label}</h4>
+              </div>
             );
           })}
         </div>

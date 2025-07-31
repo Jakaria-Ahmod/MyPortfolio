@@ -8,16 +8,19 @@ import Projects from '../Projects';
 
 const HomePage = () => {
   return (
-    <div className="container">
-      <div className="grid mt-[106px] grid-cols-[2.5fr_1fr] items-center">
-        <LayoutLeft></LayoutLeft>
-        <LayoutRight></LayoutRight>
+    <div className="container mx-auto px-4">
+      {/* Top Layout Section (Left + Right) */}
+      <div className="grid mt-[106px] grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-start">
+        <LayoutLeft />
+        <LayoutRight />
       </div>
-      <div>
-        <Services></Services>
-        <About></About>
-        <Skills></Skills>
-        <Projects></Projects>
+
+      {/* Content Sections (Responsive with spacing) */}
+      <div className="mt-16 space-y-16">
+        <Services />
+        <About />
+        <Skills />
+        <Projects />
       </div>
     </div>
   );

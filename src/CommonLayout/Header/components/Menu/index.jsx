@@ -13,12 +13,12 @@ const MenuBar = () => {
   return (
     <div>
       <div>
-        <ul className="flex items-center space-x-[60px]">
+        <ul className="flex items-center  md:space-x-6 xl:space-x-[60px]">
           {menuLinks.map((item, index) => (
             <li key={index}>
               <Link
                 to={item.path}
-                className="font-Lato text-[20px] font-medium capitalize"
+                className="font-Lato sm:text-[14px] text-[18px] lg:text-[20px] font-medium capitalize"
               >
                 {item.name}
               </Link>
