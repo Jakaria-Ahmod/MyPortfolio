@@ -8,6 +8,7 @@ import podcast from '../../../assets/img/pod.png';
 import builder from '../../../assets/img/buil.png';
 import Port from '../../../assets/img/port.png';
 import web from '../../../assets/img/web.png';
+import user from '../../../assets/img/user.png';
 export const projectsDataReactjs = [
   {
     name: 'Filmina',
@@ -43,6 +44,13 @@ export const projectsDataReactjs = [
     gitHubLink: 'https://github.com/Jakaria-Ahmod/e-shop',
     PojectImg: ecom,
     technologies: ['react.js', 'antd desing', 'formik', 'tailwindcss'],
+  },
+  {
+    name: 'UserManageMent',
+    link: 'https://user-manage-ment-frontend.vercel.app/',
+    gitHubLink: 'https://github.com/Jakaria-Ahmod/usermangement',
+    PojectImg: user,
+    technologies: ['react.js', 'tailwindcss'],
   },
 ];
 
