@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import LayoutLeft from './components/LayoutLeft';
 import LayoutRight from './components/LayoutRight';
 import Services from '../Services';
@@ -8,22 +9,41 @@ import Projects from '../Projects';
 
 const HomePage = () => {
   window.scrollTo(0, 0);
+
   return (
-    <div className="container mx-auto px-4 md:py-16">
+    <motion.div
+      className="container mx-auto px-4 md:py-16"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Top Layout Section (Left + Right) */}
-      <div className="grid mt-[106px]  grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-center">
+      <motion.div
+        className="grid mt-[106px] grid-cols-1 md:grid-cols-[2fr_1fr] gap-6 items-center"
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
         <LayoutLeft />
         <LayoutRight />
-      </div>
+      </motion.div>
 
-      {/* Content Sections (Responsive with spacing) */}
+      {/* Content Sections (Animated on Scroll) */}
       <div className="mt-16 space-y-16">
-        <Services />
-        <About />
-        <Skills />
-        <Projects />
+        {[Services, About, Skills, Projects].map((Section, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+          >
+            <Section />
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
