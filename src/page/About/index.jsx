@@ -47,7 +47,9 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <AboutRight />
+          <div className="mt-[30px]">
+            <AboutRight />
+          </div>
         </motion.div>
       </div>
     </motion.div>
