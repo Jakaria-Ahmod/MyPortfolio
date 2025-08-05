@@ -7,7 +7,7 @@ const ProjectCard = ({ img, projectLink, gitHubLink, name, technologies }) => {
         <img src={img} alt={name} className="w-full h-52 object-cover" />
         <div className="p-5 space-y-4">
           <h3 className="text-2xl font-bold text-gray-800 capitalize">
-            {name}
+            Name: {name}
           </h3>
 
           <div>

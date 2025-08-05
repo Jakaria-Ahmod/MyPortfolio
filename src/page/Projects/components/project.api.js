@@ -9,7 +9,21 @@ import builder from '../../../assets/img/buil.png';
 import Port from '../../../assets/img/port.png';
 import web from '../../../assets/img/web.png';
 import user from '../../../assets/img/user.png';
+import Dashboard from '../../../assets/img/dashboard.png';
 export const projectsDataReactjs = [
+  {
+    name: 'Admin_Dashboard',
+    link: 'https://admin-deshboard.vercel.app/',
+    gitHubLink: 'https://github.com/Jakaria-Ahmod/admin_deshboard',
+    PojectImg: Dashboard,
+    technologies: [
+      'react.js',
+      'motion',
+      'swiper',
+      'tailwindcss',
+      'react router',
+    ],
+  },
   {
     name: 'Filmina',
     link: 'https://react-home-work-poject.vercel.app/',
