@@ -104,7 +104,7 @@ const LayoutLeft = () => {
             Hire Me
           </Link>
           <a
-            href="https://drive.google.com/file/d/1y0vDrmTKlOdyFOPFmM8YZU_wihc5AQrI/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1cAfUdGmlQ6mBnccV-dXnyNqmjRYDuJXb/view?usp=drive_link"
             target="_blank"
             className="py-3 px-8 capitalize bg-praimary text-white font-Lato text-base font-bold rounded-md"
           >

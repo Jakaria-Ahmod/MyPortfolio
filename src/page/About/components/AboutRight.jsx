@@ -50,7 +50,7 @@ const AboutRight = () => {
 
         <div className="mt-6">
           <a
-            href="https://drive.google.com/file/d/1y0vDrmTKlOdyFOPFmM8YZU_wihc5AQrI/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1cAfUdGmlQ6mBnccV-dXnyNqmjRYDuJXb/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block py-3 px-6 capitalize bg-praimary text-white font-Lato text-base font-bold cursor-pointer rounded-md transition duration-300 hover:bg-opacity-90"
