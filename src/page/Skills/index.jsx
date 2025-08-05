@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Skills = () => {
   window.scrollTo(0, 0);
   return (
-    <div className="px-4 py-10 max-w-6xl mx-auto my-[100px]">
+    <div className="px-4 py-10 max-w-6xl mx-auto my-[100px] lg:my-0">
       <h2 className="text-4xl font-bold text-center mb-12 text-blue-600">
         My Skills
       </h2>

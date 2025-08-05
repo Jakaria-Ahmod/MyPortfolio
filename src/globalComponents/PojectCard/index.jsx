@@ -1,10 +1,15 @@
 import React from 'react';
 
 const ProjectCard = ({ img, projectLink, gitHubLink, name, technologies }) => {
+  const maxTechnologiesToShow = 3;
+  const showEllipsis = technologies.length > maxTechnologiesToShow;
+  const visibleTechnologies = technologies.slice(0, maxTechnologiesToShow);
+
   return (
     <div className="w-full sm:w-[90%] md:w-[80%] lg:w-[400px] mx-auto">
       <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
         <img src={img} alt={name} className="w-full h-52 object-cover" />
+
         <div className="p-5 space-y-4">
           <h3 className="text-2xl font-bold text-gray-800 capitalize">
             Name: {name}
@@ -15,7 +20,7 @@ const ProjectCard = ({ img, projectLink, gitHubLink, name, technologies }) => {
               Technologies Used:
             </h4>
             <div className="flex flex-wrap gap-2">
-              {technologies.map((tech, idx) => (
+              {visibleTechnologies.map((tech, idx) => (
                 <span
                   key={idx}
                   className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-sm"
@@ -23,6 +28,9 @@ const ProjectCard = ({ img, projectLink, gitHubLink, name, technologies }) => {
                   {tech}
                 </span>
               ))}
+              {showEllipsis && (
+                <span className="text-gray-500 text-sm font-medium">...</span>
+              )}
             </div>
           </div>
 

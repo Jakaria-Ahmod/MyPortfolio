@@ -5,7 +5,10 @@ const Logo = () => {
   return (
     <div>
       <div>
-        <Link to="/" className="text-[36px] text-praimary font-Lato uppercase">
+        <Link
+          to="/"
+          className="text-[36px] text-praimary font-Lato font-extrabold uppercase"
+        >
           Jakaria
         </Link>
       </div>

@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <motion.div
-      className="container my-[150px] px-4 mx-auto"
+      className="container my-[150px] lg:my-[10px] px-4 mx-auto"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
@@ -29,7 +29,7 @@ const About = () => {
       </motion.div>
 
       {/* Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-[40px] gap-10 items-center">
+      <div className="lg:grid grid-cols-1 md:grid-cols-2 mt-[40px] gap-10 items-center">
         {/* Left Side Animation */}
         <motion.div
           initial={{ x: -50, opacity: 0 }}
