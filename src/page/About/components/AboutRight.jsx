@@ -1,5 +1,3 @@
-import React from 'react';
-
 const AboutRight = () => {
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
@@ -50,7 +48,7 @@ const AboutRight = () => {
 
         <div className="mt-6">
           <a
-            href="https://drive.google.com/file/d/1cAfUdGmlQ6mBnccV-dXnyNqmjRYDuJXb/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1ssclT7KWf-w2ir7CO6IArMey_QyFDMIR/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block py-3 px-6 capitalize bg-praimary text-white font-Lato text-base font-bold cursor-pointer rounded-md transition duration-300 hover:bg-opacity-90"

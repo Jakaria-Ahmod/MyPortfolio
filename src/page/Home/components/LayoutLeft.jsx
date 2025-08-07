@@ -1,9 +1,8 @@
-import React from 'react';
-import { CiLinkedin } from 'react-icons/ci';
-import { FaFacebook, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
-import { Typewriter } from 'react-simple-typewriter';
-import { Link } from 'react-router';
 import CountUp from 'react-countup';
+import { CiLinkedin } from 'react-icons/ci';
+import { FaFacebook, FaGithub, FaWhatsapp } from 'react-icons/fa';
+import { Link } from 'react-router';
+import { Typewriter } from 'react-simple-typewriter';
 
 const LayoutLeft = () => {
   const typingWords = [
@@ -104,7 +103,7 @@ const LayoutLeft = () => {
             Hire Me
           </Link>
           <a
-            href="https://drive.google.com/file/d/1cAfUdGmlQ6mBnccV-dXnyNqmjRYDuJXb/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1ssclT7KWf-w2ir7CO6IArMey_QyFDMIR/view?usp=drive_link"
             target="_blank"
             className="py-3 px-8 capitalize bg-praimary text-white font-Lato text-base font-bold rounded-md"
           >

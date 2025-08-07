@@ -1,28 +1,28 @@
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
   FaBootstrap,
+  FaCheckCircle,
+  FaCss3Alt,
+  FaFigma,
   FaGitAlt,
   FaGithub,
-  FaFigma,
-  FaCheckCircle,
+  FaHtml5,
+  FaJsSquare,
+  FaReact,
 } from 'react-icons/fa';
 
+import { MdAccessTime, MdViewCarousel } from 'react-icons/md';
 import {
-  SiRedux,
-  SiTailwindcss,
   SiAntdesign,
   SiFirebase,
-  SiNetlify,
-  SiVercel,
-  SiReactrouter,
   SiFormik,
+  SiNetlify,
+  SiReactrouter,
+  SiRedux,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
   SiVorondesign,
 } from 'react-icons/si';
-
-import { MdAccessTime, MdViewCarousel } from 'react-icons/md';
 
 //
 export const skills = [
@@ -66,6 +66,12 @@ export const skills = [
   {
     name: 'React.js',
     icon: <FaReact />,
+    color: '#61dafb',
+    level: 88,
+  },
+  {
+    name: 'Type Script',
+    icon: <SiTypescript />,
     color: '#61dafb',
     level: 88,
   },
