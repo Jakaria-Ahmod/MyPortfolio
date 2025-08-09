@@ -1,3 +1,4 @@
+import blog from '../../../assets/img/blog.png';
 import builder from '../../../assets/img/buil.png';
 import Dashboard from '../../../assets/img/dashboard.png';
 import ecom from '../../../assets/img/ecom.png';
@@ -12,6 +13,13 @@ import Todo from '../../../assets/img/Todo.png';
 import user from '../../../assets/img/user.png';
 import web from '../../../assets/img/web.png';
 export const projectsDataReactjs = [
+  {
+    name: 'Blog webSite',
+    link: 'https://blog-web-site-flame.vercel.app/',
+    gitHubLink: 'https://github.com/Jakaria-Ahmod/blog_webSite',
+    PojectImg: blog,
+    technologies: ['react.js', 'tailwindcss', 'typeScript'],
+  },
   {
     name: 'Todo-app',
     link: 'https://todo-type-script-sand.vercel.app/',
