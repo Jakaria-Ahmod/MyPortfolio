@@ -98,14 +98,14 @@ const LayoutLeft = () => {
         <div className="mt-10 flex flex-col md:flex-row gap-4 items-center justify-center md:justify-start">
           <Link
             to="/contact"
-            className="py-3 px-8 capitalize bg-praimary text-white font-Lato text-base font-bold rounded-md"
+            className="py-3 px-8 capitalize bg-green-700 text-white font-Lato text-base font-bold rounded-md"
           >
             Hire Me
           </Link>
           <a
             href="https://drive.google.com/file/d/1ssclT7KWf-w2ir7CO6IArMey_QyFDMIR/view?usp=drive_link"
             target="_blank"
-            className="py-3 px-8 capitalize bg-praimary text-white font-Lato text-base font-bold rounded-md"
+            className="py-3 px-8 capitalize bg-green-700 text-white font-Lato text-base font-bold rounded-md"
           >
             Download CV
           </a>

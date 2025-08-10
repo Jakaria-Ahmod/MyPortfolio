@@ -1,15 +1,14 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import CommonHeding from '../../globalComponents/CommonHeading';
 import AboutLeft from './components/AboutLeft';
 import AboutRight from './components/AboutRight';
-import CommonHeding from '../../globalComponents/CommonHeading';
 
 const About = () => {
   window.scrollTo(0, 0);
 
   return (
     <motion.div
-      className="container my-[150px] lg:my-[10px] px-4 mx-auto"
+      className="container my-[150px] lg:my-[150px] px-4 mx-auto"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

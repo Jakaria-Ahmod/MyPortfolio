@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import CommonButton from '../../globalComponents/CommonButton';
 import CommonHeding from '../../globalComponents/CommonHeading';
 import SerVicesCard from '../../globalComponents/ServiceCard';
 import { services } from './ServiceApi/ServiceApi';
-import CommonButton from '../../globalComponents/CommonButton';
 
 const containerVariants = {
   hidden: { opacity: 1 },
@@ -27,7 +27,7 @@ const Services = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="my-20 md:my-[150px]">
+      <div className="my-20 md:my-[150px] lg:my-[150px]">
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -42,7 +42,7 @@ const Services = () => {
 
         {/* Services Cards */}
         <motion.div
-          className="mt-16 grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="mt-16 grid grid-cols-1 justify-center  sm:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
