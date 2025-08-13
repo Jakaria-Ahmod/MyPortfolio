@@ -44,15 +44,15 @@ const LayoutLeft = () => {
 
   const statsData = [
     {
-      value: '2+',
+      value: '3+',
       label: 'Years of Experience',
     },
     {
-      value: '10+',
+      value: '20+',
       label: 'Completed Projects',
     },
     {
-      value: '3+',
+      value: '6+',
       label: 'Team Collaborations',
     },
   ];
