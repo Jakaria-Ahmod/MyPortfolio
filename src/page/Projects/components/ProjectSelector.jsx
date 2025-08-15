@@ -30,7 +30,7 @@ const ProjectSelector = () => {
   };
 
   return (
-    <div className="p-8 bg-gradient-to-br  min-h-screen ">
+    <div className="lg:p-8 bg-gradient-to-br  min-h-screen ">
       {/* Main Category Buttons */}
       <div className="flex flex-wrap gap-4 mb-8 justify-center">
         {[
@@ -180,7 +180,7 @@ const ProjectSelector = () => {
           // className="w-full max-w-4xl mx-auto"
         >
           <div>
-            <div className=" rounded-xl p-6 shadow-inner">
+            <div className=" rounded-xl lg:p-6 shadow-inner">
               {projectComponent}
             </div>
           </div>
