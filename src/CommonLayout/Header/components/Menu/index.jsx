@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router';
 
 const MenuBar = () => {
@@ -8,6 +7,7 @@ const MenuBar = () => {
     { name: 'About me', path: '/about' },
     { name: 'Skills', path: '/skills' },
     { name: 'Project', path: '/project' },
+    { name: 'future projects', path: '/futureprojects' },
     { name: 'Contact', path: '/contact' },
   ];
   return (

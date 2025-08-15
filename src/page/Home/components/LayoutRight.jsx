@@ -1,4 +1,3 @@
-import React from 'react';
 import jakariaImg from '../../../assets/img/jakaria.jpg';
 
 const LayoutRight = () => {

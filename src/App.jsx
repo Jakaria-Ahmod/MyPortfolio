@@ -1,13 +1,15 @@
-import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router';
-import RootLayout from './CommonLayout/RootLayout';
-import HomePage from './page/Home';
-import About from './page/About';
-import Skills from './page/Skills';
-import Projects from './page/Projects';
-import Contact from './page/Contact';
-import Services from './page/Services';
 import { ToastContainer } from 'react-toastify';
+import './App.css';
+import RootLayout from './CommonLayout/RootLayout';
+import About from './page/About';
+import Contact from './page/Contact';
+import Futureprojects from './page/Futureprojects';
+import HomePage from './page/Home';
+import NotFound from './page/NotFound';
+import Projects from './page/Projects';
+import Services from './page/Services';
+import Skills from './page/Skills';
 
 function App() {
   const router = createBrowserRouter([
@@ -38,6 +40,14 @@ function App() {
         {
           path: '/service',
           element: <Services></Services>,
+        },
+        {
+          path: '/futureprojects',
+          element: <Futureprojects></Futureprojects>,
+        },
+        {
+          path: '*',
+          element: <NotFound></NotFound>,
         },
       ],
     },
