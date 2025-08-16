@@ -2,6 +2,7 @@ import blog from '../../../assets/img/blog.png';
 import builder from '../../../assets/img/buil.png';
 import Dashboard from '../../../assets/img/dashboard.png';
 import ecom from '../../../assets/img/ecom.png';
+import gameSite from '../../../assets/img/gamesite.png';
 import Girl from '../../../assets/img/girl.png';
 import GymImg from '../../../assets/img/gym.png';
 import landing from '../../../assets/img/landing.png';
@@ -13,6 +14,13 @@ import Todo from '../../../assets/img/Todo.png';
 import user from '../../../assets/img/user.png';
 import web from '../../../assets/img/web.png';
 export const projectsDataReactjs = [
+  {
+    name: 'Game webSite',
+    link: 'https://assingment-in-jobs.vercel.app/',
+    gitHubLink: 'https://github.com/Jakaria-Ahmod/Assingment_In_Jobs',
+    PojectImg: gameSite,
+    technologies: ['react.js', 'tailwindcss', 'typeScript'],
+  },
   {
     name: 'Blog webSite',
     link: 'https://blog-web-site-flame.vercel.app/',
